@@ -8,9 +8,9 @@ const Timerchallenge = ({ title, targetTime }) => {
     const dialog = useRef()
 
     function handleStart() {
-        timer.current = setTimeout(() => {
+        timer.current = setInterval(() => {
             setTimerExpired(true);
-            dialog.current.showModal()
+            dialog.current.open()
         }, targetTime * 1000)
         console.log(timer, "timer2")
         setTimerStarted(true)
